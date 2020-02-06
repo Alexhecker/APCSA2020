@@ -51,15 +51,16 @@ public class MilesPerHour
 
 	public void print()
 	{
-		System.out.println(distance + " miles in " + hours + " hours and " + minutes + " minutes = " + mph + "MPH");
+		System.out.println((distance + " miles in " + hours + " hours and " + minutes + " minutes = " + Math.round(mph) + " MPH"));
 	}
 	
 	//create a print or toString or both
 	
 	public String toString()
 	{
-		String finalMPH = String.format("%.0", mph);
-		return(distance + " miles in " + hours + " hour and  " + minutes + " minutes = " + finalMPH + " MPH.\n\n");
-	
+		
+		//return(distance + " miles in " + hours + " hour and  " + minutes + " minutes = " +  finalMPH + " MPH.\n\n");
+		return Integer.toString((int)Math.round(mph));
 	}
+	
 }
