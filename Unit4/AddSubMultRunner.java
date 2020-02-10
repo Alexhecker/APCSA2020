@@ -4,7 +4,6 @@ package Unit4;
 //www.apluscompsci.com
 //Name - Alexander Hecker
 //Date - 2/10/2020
-//Class - APCSA
 //Lab - AddSubMultRunner.java
 
 import static java.lang.System.*; 
@@ -21,7 +20,8 @@ public class AddSubMultRunner
 		System.out.println( AddSubMult.check( 0, 1) );	
 		System.out.println( AddSubMult.check( 1, 0 ) );	
 		System.out.println( AddSubMult.check( 3.1, 5.7) );	
-		System.out.println( AddSubMult.check( 5.2, 3.8 ) );	
+		System.out.printf( "%.1f" , AddSubMult.check( 5.2, 3.8 ) );	
+		System.out.println();
 		System.out.println( AddSubMult.check( 5342, 323 ) );						
 	}
 }
