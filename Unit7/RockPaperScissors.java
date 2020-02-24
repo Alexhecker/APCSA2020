@@ -1,35 +1,98 @@
 package Unit7;
+
 //(c) A+ Computer Science
 // www.apluscompsci.com
 //Name - Alexander Hecker
 
 import java.util.Scanner;
+import java.util.Random;
 import static java.lang.System.*;
 
-public class RPSRunner
+public class RockPaperScissors
 {
-	public static void main(String args[])
+	private String playChoice;
+	private String compChoice;
+	private Random rand = new Random();
+
+	public RockPaperScissors()
 	{
-		Scanner keyboard = new Scanner(System.in);
-		char response;
-		String again;
+		playChoice = "R";
+		int hey = rand.nextInt(3);
+		if(hey == 0) {
+			compChoice = "R";
+		}
+		if(hey == 1) {
+			compChoice = "P";
+		}
+		if(hey == 2) {
+			compChoice = "S";
+		}
+	}
+
+	public RockPaperScissors(String player)
+	{
+		// 0 = rock
+		// 1 = paper
+		// 2 = scissors
 		
-		//add in a do while loop after you get the basics up and running
-		do {
-			
-			String player = "";
+		playChoice = player;
+		int hey = rand.nextInt(3);
+		if(hey == 0) {
+			compChoice = "R";
+		}
+		if(hey == 1) {
+			compChoice = "P";
+		}
+		if(hey == 2) {
+			compChoice = "S";
+		}
+	}
+
+	public void setPlayers(String player)
+	{
+		playChoice = player;
+		int hey = rand.nextInt(3);
+		if(hey == 0) {
+			compChoice = "R";
+		}
+		if(hey == 1) {
+			compChoice = "P";
+		}
+		if(hey == 2) {
+			compChoice = "S";
+		}
+	}
+
+	public String determineWinner()
+	{
+		if(playChoice.equals(compChoice)) {
+			return "!Draw Game!";
+		}
+		else if (playChoice.equals("R") && compChoice.equals("P")) {
+			return "!Computer wins <<Paper Covers Rock>>!";
+		}
+		else if(playChoice.equals("P") && compChoice.equals("S")) {
+			return "!Computer wins <<Scissors Cuts Paper>>!";
+		}
+		else if(playChoice.equals("S") && compChoice.equals("R")) {
+			return "!Computer wins <<Rock Breaks Scissors>>!";
+		}
 		
-			out.print("Rock-Paper-Scissors - pick your weapon [R,P,S] :: ");
-			
-			//read in the player value
-			player = keyboard.next().toUpperCase();
-			
-			RockPaperScissors game = new RockPaperScissors(player);
-			System.out.println(game);
-			System.out.println();
-			System.out.print("Want to play again? ");
-			
-			again = keyboard.next();
-		}while(again.toLowerCase().equals("y"));
+		else if (playChoice.equals("P") && compChoice.equals("R")) {
+			return "!Player wins <<Paper Covers Rock>>!";
+		}
+		else if(playChoice.equals("S") && compChoice.equals("P")) {
+			return "!Player wins <<Scissors Cuts Paper>>!";
+		}
+		else if(playChoice.equals("R") && compChoice.equals("S")) {
+			return "!Player wins <<Rock Breaks Scissors>>!";
+		}
+		return "idk";
+	}
+
+	public String toString()
+	{
+		String output= "player had " + playChoice + "\ncomputer had " + compChoice + "\n" + determineWinner();
+		return output;
 	}
 }
