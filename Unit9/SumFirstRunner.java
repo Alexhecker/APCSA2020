@@ -8,8 +8,8 @@ import Unit8.RaySumLast;
 
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
-//Date -
+//Name - Alexander Hecker 
+//Date - 2/26/2020
 
 public class SumFirstRunner
 {
